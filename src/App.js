@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './componentes/Header/Header';
+import Formulario from './componentes/Formulario/Formulario';
 
 function App() {
+
+  /**Todo lo que se agregue antes del return es codigo JS. 
+   * Para utilizar las funciones o variables dentro del return existen 3 maneras distintas
+   * Con llaves - {nombre variable o funcion}
+   * Etiquetas de apertura y cierre - <nombreVariable></nombreVariable>
+   * etiqueta de apertura - <NombreVariable />
+   * */
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div>
+
+      <Header />
+      <Formulario />
+
     </div>
+
   );
 }
 
