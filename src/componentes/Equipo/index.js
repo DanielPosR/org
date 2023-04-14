@@ -1,8 +1,9 @@
+import Colaborador from "../Colaborador";
 import "./Equipo.css";
 
 const Equipo = (props) => {
 
-    const {titulo, colorPrimario, colorSecundario} = props.datos;
+    const { titulo, colorPrimario, colorSecundario } = props.datos;
 
     const obj = {
         backgroundColor: colorSecundario,
@@ -17,7 +18,8 @@ const Equipo = (props) => {
         <h3 style={estiloTitulo}>{titulo}</h3>
 
         <div className="colaboradores" >
-
+            <Colaborador />
+            <Colaborador />
         </div>
     </section>
 }
