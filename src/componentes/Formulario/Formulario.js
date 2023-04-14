@@ -5,11 +5,13 @@ import Boton from "../Boton";
 import { useState } from "react";
 
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     const [nombre, actualizarNombre] = useState("");
     const [puesto, actualizarPuesto] = useState("");
     const [foto, actualizarFoto] = useState("");
+    const [equipo, actualizarEquipo] = useState("");
+
 
     const manejarEnvio = (e) => {
         e.preventDefault();
@@ -17,7 +19,8 @@ const Formulario = () => {
         let obtenerDatos = {
             nombre,
             puesto,
-            foto
+            foto,
+            equipo
         }
         console.log(obtenerDatos);
     }
@@ -49,7 +52,11 @@ const Formulario = () => {
                 actualizarValor={actualizarFoto}
             />
 
-            <ListaOpciones />
+            <ListaOpciones
+                valor={equipo}
+                actualizarEquipo={actualizarEquipo}
+                equipos={props.equipos}
+            />
 
             <Boton name="Crear" />
         </form>
