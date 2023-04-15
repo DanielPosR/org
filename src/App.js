@@ -4,6 +4,7 @@ import Header from "./componentes/Header/Header";
 import Formulario from "./componentes/Formulario/Formulario";
 import MiOrg from "./componentes/MiOrg/MiOrg";
 import Equipo from "./componentes/Equipo";
+import Footer from "./componentes/Footer";
 
 /**Todo lo que se agregue antes del return es codigo JS.
  * Para utilizar las funciones o variables dentro del return existen 3 maneras distintas
@@ -17,7 +18,17 @@ function App() {
   //*const [nombre de la variable, funcion que modifica el valor de la variable] = useState('valor inicial de la variable');
   //* Ternario --> condicion ? seMuestra : noSeMuestra;
   const [mostrarFormulario, actualizarMostrar] = useState(true);
-  const [colaboradores, actualizarColaboradores] = useState([]);
+  const [colaboradores, actualizarColaboradores] = useState([
+    {
+      equipo: "Programación",
+      foto: "https://github.com/DanielPosR.png",
+      nombre: "Daniel Posadas Rangel",
+      puesto: "Estudiante Desarrollo"
+    }
+  ]);
+
+
+
 
   const cambiarMostrar = () => {
     actualizarMostrar(!mostrarFormulario);
@@ -86,6 +97,8 @@ function App() {
           key={equipo.titulo}
           colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)} />
       })}
+
+      <Footer />
 
     </div>
   );

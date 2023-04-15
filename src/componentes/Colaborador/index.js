@@ -2,10 +2,11 @@ import "./Colaborador.css";
 
 const Colaborador = (props) => {
 
-    const { nombre, puesto, foto, equipo } = props.datos;
+    const { nombre, puesto, foto } = props.datos;
+    const {colorPrimario} = props;
 
     return <div className="colaborador">
-        <div className="encabezado">
+        <div className="encabezado" style={{backgroundColor: colorPrimario}} >
             <img src={foto} alt={nombre}/>
         </div>
 
