@@ -17,10 +17,16 @@ function App() {
   //*const [nombre de la variable, funcion que modifica el valor de la variable] = useState('valor inicial de la variable');
   //* Ternario --> condicion ? seMuestra : noSeMuestra;
   const [mostrarFormulario, actualizarMostrar] = useState(true);
+  const [colaboradores, actualizarColaboradores] = useState([]);
 
   const cambiarMostrar = () => {
     actualizarMostrar(!mostrarFormulario);
   };
+
+  const registrarColaborador = (colaborador) => {
+
+    actualizarColaboradores([...colaboradores, colaborador]);
+  }
 
   //*Lista de equipos
 
@@ -65,12 +71,20 @@ function App() {
   return (
     <div>
       <Header />
-      {mostrarFormulario === true ? <Formulario equipos={equipos.map(equipo => equipo.titulo)} /> : <div></div>}
+      {/*{mostrarFormulario === true ?: <div></div>} operador ternario sintaxis larga*/}
+
+      {mostrarFormulario && <Formulario /*sintaxis corta de un ternario */
+        equipos={equipos.map((equipo) => equipo.titulo)}
+        registrarColaborador={registrarColaborador} />
+      }
 
       <MiOrg cambiarMostrar={cambiarMostrar} />
 
       {equipos.map((equipo) => {
-        return <Equipo datos={equipo} key={equipo.titulo} />
+        return <Equipo
+          datos={equipo}
+          key={equipo.titulo}
+          colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)} />
       })}
 
     </div>

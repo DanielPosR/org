@@ -7,6 +7,8 @@ import { useState } from "react";
 
 const Formulario = (props) => {
 
+    const { registrarColaborador, equipos } = props;
+
     const [nombre, actualizarNombre] = useState("");
     const [puesto, actualizarPuesto] = useState("");
     const [foto, actualizarFoto] = useState("");
@@ -22,7 +24,7 @@ const Formulario = (props) => {
             foto,
             equipo
         }
-        console.log(obtenerDatos);
+        registrarColaborador(obtenerDatos);
     }
 
     return <section className="formulario">
@@ -55,7 +57,7 @@ const Formulario = (props) => {
             <ListaOpciones
                 valor={equipo}
                 actualizarEquipo={actualizarEquipo}
-                equipos={props.equipos}
+                equipos={equipos}
             />
 
             <Boton name="Crear" />
