@@ -4,6 +4,13 @@
     box-sizing: border-box;
     text-align: center;
     font-size: 32px;
+    position: relative;
+}
+
+.input-color {
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
 
 .equipo h3 {
