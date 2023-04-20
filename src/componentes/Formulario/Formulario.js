@@ -28,7 +28,7 @@ const Formulario = (props) => {
     }
 
     return <section className="formulario">
-        <form onSubmit={manejarEnvio}>
+        <form className="contenedor" onSubmit={manejarEnvio}>
             <h2>Rellena el formulario para crear el colaborador</h2>
             <CampoTexto
                 titulo="Nombre"

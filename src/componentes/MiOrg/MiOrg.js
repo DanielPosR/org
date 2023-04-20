@@ -6,7 +6,7 @@ const MiOrg = (props) => {
   //*const [nombre de la variable, funcion que modifica el valor de la variable] = useState('valor inicial de la variable');
 
   return (
-    <section className="orgSection">
+    <section className="orgSection contenedor">
       <h3 className="title">Mi organización</h3>
       <img onClick={props.cambiarMostrar} src="/img/add.png" alt="icono add" />
     </section>

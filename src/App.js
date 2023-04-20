@@ -20,14 +20,12 @@ function App() {
   const [mostrarFormulario, actualizarMostrar] = useState(true);
   const [colaboradores, actualizarColaboradores] = useState([
     {
-      equipo: "Programación",
+      equipo: "Front End",
       foto: "https://github.com/DanielPosR.png",
       nombre: "Daniel Posadas Rangel",
       puesto: "Estudiante Desarrollo"
     }
   ]);
-
-
 
 
   const cambiarMostrar = () => {
@@ -37,7 +35,11 @@ function App() {
   const registrarColaborador = (colaborador) => {
 
     actualizarColaboradores([...colaboradores, colaborador]);
+
   }
+
+
+
 
   //*Lista de equipos
 

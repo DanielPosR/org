@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 *,
@@ -9,6 +10,17 @@ html {
 }
 
 body {
-  margin: 0;
+  font-size: 1.6rem;
+  line-height: 1.5;
   font-family: 'Prata', serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 90%;
 }
