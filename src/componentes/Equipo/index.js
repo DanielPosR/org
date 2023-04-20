@@ -4,7 +4,7 @@ import "./Equipo.css";
 const Equipo = (props) => {
 
     const { titulo, colorPrimario, colorSecundario } = props.datos;
-    const { colaboradores } = props;
+    const { colaboradores, eliminarColaborador } = props;
 
     const obj = {
         backgroundColor: colorSecundario,
@@ -26,7 +26,9 @@ const Equipo = (props) => {
                         return <Colaborador
                             key={index}
                             datos={colaborador}
-                            colorPrimario={colorPrimario} />
+                            colorPrimario={colorPrimario} 
+                            eliminarColaborador = {eliminarColaborador}
+                            />
                     })}
 
                 </div>
