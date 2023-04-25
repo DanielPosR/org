@@ -21,49 +21,55 @@ function App() {
 
 
 
-  const [mostrarFormulario, actualizarMostrar] = useState(true);
+  const [mostrarFormulario, actualizarMostrar] = useState(false);
   const [colaboradores, actualizarColaboradores] = useState([
     {
       id: uuid(),
       equipo: "Front End",
       foto: "https://github.com/DanielPosR.png",
       nombre: "Daniel Posadas Rangel",
-      puesto: "Estudiante Desarrollo"
+      puesto: "Estudiante Desarrollo",
+      fav: true
     },
     {
       id: uuid(),
       equipo: "Programación",
       foto: "https://github.com/harlandlohora.png",
       nombre: "Harland Lohora",
-      puesto: "Instructor"
+      puesto: "Instructor",
+      fav: false
     },
     {
       id: uuid(),
       equipo: "Devops",
       foto: "https://github.com/genesysaluralatam.png",
       nombre: "Genesys Rondon",
-      puesto: "Instructora"
+      puesto: "Instructora",
+      fav: false
     },
     {
       id: uuid(),
       equipo: "Móvil",
       foto: "https://github.com/JeanmarieAluraLatam.png",
       nombre: "Jeanmarie Quijada",
-      puesto: "Instructora"
+      puesto: "Instructora",
+      fav: false
     },
     {
       id: uuid(),
       equipo: "Data Science",
       foto: "https://github.com/christianpva.png",
       nombre: "Christian Velasco",
-      puesto: "Instructor"
+      puesto: "Instructor",
+      fav: false
     },
     {
       id: uuid(),
       equipo: "Front End",
       foto: "https://github.com/JoseDarioGonzalezCha.png",
       nombre: "Juan de la Torre",
-      puesto: "Instructor"
+      puesto: "Instructor",
+      fav: false
     }
   ]);
 
@@ -165,6 +171,20 @@ function App() {
 
 
 
+  //* FUNCION LIKE
+  const like = (id) => {
+
+    const colaboradoresFavs = colaboradores.map((colaborador) => {
+
+      if (colaborador.id === id) {
+        colaborador.fav = !colaborador.fav
+      }
+
+      return colaborador;
+    })
+
+    actualizarColaboradores(colaboradoresFavs);
+  }
 
 
   return (
@@ -189,6 +209,7 @@ function App() {
           colaboradores={colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
           eliminarColaborador={eliminarColaborador}
           actualizarColor={actualizarColor}
+          like={like}
         />
       })}
 

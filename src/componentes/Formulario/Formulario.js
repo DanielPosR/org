@@ -1,5 +1,5 @@
 import "./Formulario.css";
-import CampoTexto from "../CampoTexto";
+import Campo from "../Campo";
 import ListaOpciones from "../ListaOpciones";
 import Boton from "../Boton";
 import { useState } from "react";
@@ -44,7 +44,7 @@ const Formulario = (props) => {
         <div className="contenedor formularios">
             <form onSubmit={manejarEnvio}>
                 <h2>Rellena el formulario para crear el colaborador</h2>
-                <CampoTexto
+                <Campo
                     titulo="Nombre"
                     placeholder="Ingresar nombre"
                     required
@@ -52,7 +52,7 @@ const Formulario = (props) => {
                     actualizarValor={actualizarNombre}
                 />
 
-                <CampoTexto
+                <Campo
                     titulo="Puesto"
                     placeholder="Ingresar puesto"
                     required
@@ -60,7 +60,7 @@ const Formulario = (props) => {
                     actualizarValor={actualizarPuesto}
                 />
 
-                <CampoTexto
+                <Campo
                     titulo="Foto"
                     placeholder="Ingresar enlace de foto"
                     required
@@ -79,17 +79,18 @@ const Formulario = (props) => {
 
             <form onSubmit={manejarNuevoEquipo}>
                 <h2>¿Falta tu equipo? Crealo aquí</h2>
-                <CampoTexto
+                <Campo
                     titulo="Titulo"
-                    placeholder="Ingresar titulo..."
+                    placeholder="Ingresar titulo"
                     required
                     valor={titulo}
                     actualizarValor={actualizarTitulo}
                 />
 
-                <CampoTexto
+                <Campo
+                    type="color"
                     titulo="Color"
-                    placeholder="Ingresar color en Hex..."
+                    placeholder="Seleccionar color"
                     required
                     valor={color}
                     actualizarValor={actualizarColor}
