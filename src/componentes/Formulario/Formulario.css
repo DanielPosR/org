@@ -1,6 +1,4 @@
 .formulario {
-    display: flex;
-    justify-content: center;
     margin: 40px 0;
 }
 
@@ -9,21 +7,30 @@
         margin: 55px 0;
     }
 }
-.formulario form {
+
+.formularios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+@media (min-width: 998px) {
+    .formularios {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.formulario form { 
     max-width: 100%;
     background-color: #f7f7f7;
     box-shadow: 7px 7px 15px rgba(0, 0, 0, .4);
     border-radius: 20px;
     padding: 10px;
-    width: 90%;
+    width: 100%;
 }
 
-@media (min-width: 768px) {
-    .formulario form {
-        width: 50%;
-        padding: 25px;
-    }
-}
 
 .formulario h2 {
     font-size: 20px;

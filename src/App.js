@@ -114,14 +114,14 @@ function App() {
 
 
 
-  //*Ocultar o mostrar el formulario de registro
+  //*OCULTAR O MOSTRAR EL FORMULARIO DE REGISTRO
   const cambiarMostrar = () => {
     actualizarMostrar(!mostrarFormulario);
   };
 
 
 
-  //*Registrar colaboradores 
+  //*REGISTRAR COLABORADOR 
   const registrarColaborador = (colaborador) => {
 
     actualizarColaboradores([...colaboradores, colaborador]);
@@ -130,7 +130,7 @@ function App() {
 
 
 
-  //*Eliminar colaborador
+  //* ELIMINAR COLABORADOR
   const eliminarColaborador = (id) => {
 
     const nuevosColaboradores = colaboradores.filter((colaborador) => colaborador.id !== id);
@@ -140,7 +140,7 @@ function App() {
 
 
 
-  //*Actualizar color de fondo de equipo*/
+  //*ACTUALIZAR COLOR DE FONDO DEL EQUIPO/
   const actualizarColor = (color, id) => {
 
     const equiposActualizados = equipos.map((equipo) => {
@@ -155,14 +155,28 @@ function App() {
     actualizarEquipos(equiposActualizados);
   }
 
+
+
+  //*CREAR EQUIPO
+  const crearEquipo = (nuevoEquipo) => {
+
+    actualizarEquipos([...equipos, { ...nuevoEquipo, id: uuid() }])
+  }
+
+
+
+
+
   return (
     <div>
       <Header />
-      {/*{mostrarFormulario === true ?: <div></div>} operador ternario sintaxis larga*/}
+      {/* Si {mostrarFormulario === true (entonces)? (ejecuta este codigo) : (ejecuta este otro)} operador ternario sintaxis larga*/}
 
       {mostrarFormulario && <Formulario /*sintaxis corta de un ternario */
         equipos={equipos.map((equipo) => equipo.titulo)}
-        registrarColaborador={registrarColaborador} />
+        registrarColaborador={registrarColaborador}
+        crearEquipo={crearEquipo}
+      />
       }
 
       <MiOrg cambiarMostrar={cambiarMostrar} />
