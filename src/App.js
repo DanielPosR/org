@@ -62,14 +62,6 @@ function App() {
       nombre: "Christian Velasco",
       puesto: "Instructor",
       fav: false
-    },
-    {
-      id: uuid(),
-      equipo: "Front End",
-      foto: "https://github.com/JoseDarioGonzalezCha.png",
-      nombre: "Juan de la Torre",
-      puesto: "Instructor",
-      fav: false
     }
   ]);
 
